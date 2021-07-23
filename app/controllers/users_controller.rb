@@ -19,9 +19,9 @@ class UsersController < ApplicationController
   end
 
   def signup
-    # byebug
-    user_params = params.permit(:name, :email, :password)
+
     user = User.create(user_params)
+    # byebug
     if user.valid?
       token = JWT.encode({ user_id: user.id }, ENV['PASSWORD'], 'HS256')
       render json: { user: UserSerializer.new(user), token: token }, status: :created
@@ -30,9 +30,16 @@ class UsersController < ApplicationController
     end
   end
 
+
   def me
     # byebug
     render json: @user
+  end
+
+  private
+
+  def user_params
+    params.permit(:name, :email, :password)
   end
 
 end
