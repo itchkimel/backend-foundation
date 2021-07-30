@@ -10,12 +10,7 @@ class RequestSerializer < ActiveModel::Serializer
               :reason_header, 
               :reason_body, 
               :amount, 
-              :address_number, 
-              :address_street, 
-              :address_city, 
-              :address_state, 
-              :address_country, 
-              :address_zip
+              :auto_address
 
   belongs_to :user
 
