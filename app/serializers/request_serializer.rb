@@ -10,7 +10,8 @@ class RequestSerializer < ActiveModel::Serializer
               :reason_header, 
               :reason_body, 
               :amount, 
-              :auto_address
+              :auto_address,
+              :updated_at
 
   belongs_to :user
 
