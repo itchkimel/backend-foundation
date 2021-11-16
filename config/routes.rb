@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   post "/signup", to: "users#signup"
   post "/users/login", to: "users#login"
   get "/me", to: "users#me"
+  delete "/requests/:id", to: "requests#destroy"
 
   resources :requests
   resources :users

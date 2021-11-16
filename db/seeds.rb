@@ -43,7 +43,8 @@ puts "Users created!"
                       work: "Flatiron", 
                       reason_header: "Financial Support", 
                       reason_body: "I need to save up for a house", 
-                      amount: rand(500..15000) )
+                      amount: rand(500..15000),
+                      updated_at: Time.now - 66.days )
   r2 = Request.create(
                       user_id: User.ids.sample,
                       name: "Nick", 
@@ -55,7 +56,9 @@ puts "Users created!"
                       work: "Uber", 
                       reason_header: "Business startup", 
                       reason_body: "Covid struggles, so I would like to start my own bike business", 
-                      amount: rand(500..15000) )
+                      amount: rand(500..15000),
+                      updated_at: Time.now - 10.days )
+
   r3 = Request.create(
                       user_id: 2,
                       name: "David", 
@@ -67,7 +70,8 @@ puts "Users created!"
                       work: "Librarian", 
                       reason_header: "Donation", 
                       reason_body: "We would like to add a new art's section in  our children section", 
-                      amount: rand(500..15000) )
+                      amount: rand(500..15000),
+                      updated_at: Time.now - 150.days )
   r4 = Request.create(
                       user_id: 4,
                       name: "Jenna", 
@@ -103,7 +107,8 @@ puts "Users created!"
                       work: "Real Estate", 
                       reason_header: "Political", 
                       reason_body: "To lobby on hehalf of the homeless in NY", 
-                      amount: rand(500..15000) )
+                      amount: rand(500..15000),
+                      updated_at: Time.now - 3.days )
   r7 = Request.create(
                       user_id: 5,
                       name: "Katie", 
@@ -115,7 +120,8 @@ puts "Users created!"
                       work: "Statistician", 
                       reason_header: "Donation", 
                       reason_body: "Upgrade the statistics lab on cancer patients", 
-                      amount: rand(500..15000) )
+                      amount: rand(500..15000),
+                      updated_at: Time.now - 15.days )
   r8 = Request.create(
                       user_id: 1,
                       name: "Barak", 
@@ -127,6 +133,9 @@ puts "Users created!"
                       work: "Real Estate", 
                       reason_header: "Global Climate", 
                       reason_body: "A startup to find disposable goods that won't damage the planet", 
-                      amount: rand(500..15000) )
+                      amount: rand(500..15000), 
+                      updated_at: Time.now - 45.days )
 
 puts "Requests created!"
+   
+puts "Seeding complete!"

@@ -1,11 +1,17 @@
 class RequestsController < ApplicationController
 
-  before_action :authorized, only: [:create]
+  before_action :authorized, only: [:create, :destroy]
 
   def create
     request = @user.requests.create(request_params)
     render json: request, status: :created
   end
+
+  def destroy
+    request = @user.requests.find(params[:id])
+    request.destroy
+    render json: request
+end
 
 
 private 
